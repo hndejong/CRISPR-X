@@ -7,7 +7,7 @@ parent=$2
 sample=$3
 
 cmd='Rscript /users/lfresard/repos/crispr-x/hotspot_analysis/mutation_reads_summary_slidingwindow.R ${WORK_DIR} ${parent} ${sample}'
-date >$WORK_DIR/Mutread_hotspot_CX${sample}_summary.log
-echo $cmd >>$WORK_DIR/Mutread_hotspot_CX${sample}_summary.log
-eval $cmd >> $WORK_DIR/Mutread_hotspot_CX${sample}_summary.log 2>&1
-date >>$WORK_DIR/Mutread_hotspot_CX${sample}_summary.log
+date >$WORK_DIR/Mutread_hotspot_CX${sample}_slidinwindow_summary.log
+echo $cmd >>$WORK_DIR/Mutread_hotspot_CX${sample}_slidinwindow_summary.log
+eval $cmd >> $WORK_DIR/Mutread_hotspot_CX${sample}_slidinwindow_summary.log 2>&1
+date >>$WORK_DIR/Mutread_hotspot_CX${sample}_slidinwindow_summary.log
