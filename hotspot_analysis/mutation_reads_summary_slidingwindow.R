@@ -31,7 +31,7 @@ sample_files=sample_files[!grepl("log", sample_files)]
 # PROCESS EACH FILE AND GET RESULTS
 
 #parent<-as.data.frame(read.table(par, header=T, sep="\t"))
-results=array(dim=c(length(files),11))
+results=array(dim=c(length(sample_files),11))
 colnames(results)=c('Sample','H1','H2', 'Mut_readshotspot','total_reads_hotspot','proportion', 'enrichment', 'Ave_mut_read_hotspot','SD_mut_read_hotspot','Ave_mut_read','SD_mut_read')
 
 for (i in 1: length(sample_files)){
