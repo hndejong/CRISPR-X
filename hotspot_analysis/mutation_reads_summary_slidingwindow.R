@@ -35,8 +35,8 @@ results=array(dim=c(length(sample_files),11))
 colnames(results)=c('Sample','H1','H2', 'Mut_readshotspot','total_reads_hotspot','proportion', 'enrichment', 'Ave_mut_read_hotspot','SD_mut_read_hotspot','Ave_mut_read','SD_mut_read')
 
 for (i in 1: length(sample_files)){
-	temp=as.data.frame(read.table(par_files[i],header=T, sep="\t"))
-	parent=as.data.frame(read.table(sample_files[i],header=T, sep="\t"))
+	temp=as.data.frame(read.table(sample_files[i],header=T, sep="\t"))
+	parent=as.data.frame(read.table(par_files[i],header=T, sep="\t"))
 	results[i,1]=unlist(strsplit(sample_files[i],"_"))[1]
 	results[i,2]=unlist(strsplit(unlist(strsplit(unlist(strsplit(par_files[i], '_'))[5],'[.]'))[1],'-'))[1]
 	results[i,3]=unlist(strsplit(unlist(strsplit(unlist(strsplit(par_files[i], '_'))[5],'[.]'))[1],'-'))[2]
