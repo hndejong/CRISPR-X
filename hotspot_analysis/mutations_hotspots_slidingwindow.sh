@@ -93,7 +93,7 @@ then
 			echo "mutation counts on reads spanning hotspot done"
 			
 			date
-	
+	fi
 elif [  "$mode" == "soft" ]
 then
 	echo "Soft mode"
