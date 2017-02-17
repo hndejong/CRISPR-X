@@ -92,8 +92,8 @@ then
 			echo "mutation counts on reads spanning hotspot done"
 			
 			date
-	
-elif [  "$mode" == "soft" ]
+	fi
+elif [ "$mode" == "soft" ]
 then
 	echo "Soft mode"
 	#1/FILTER BAM FOR READS IN THE HOSTPOT
