@@ -21,7 +21,7 @@ if [[ "$H1" -gt 1 && b -eq 2 ]] || [[ a -eq 3 && b -eq 4 ]]
 # elif statements
 #if [ "$mode" == "strict" ]
 #then
-if [[ "$read_length" -gt "$window_size" ]]
+if [ "$read_length" -gt "$window_size" ]
 then
 	echo "Strict mode"
 #1/FILTER BAM FOR READS IN THE HOSTPOT
