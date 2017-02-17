@@ -64,7 +64,7 @@ then
 			echo "mutation counts on reads spanning hotspot done"
 			
 			date
-	else
+		else
 			echo "Strict mode"
 			#1/FILTER BAM FOR READS IN THE HOSTPOT
 			echo "------------------------------------------"
