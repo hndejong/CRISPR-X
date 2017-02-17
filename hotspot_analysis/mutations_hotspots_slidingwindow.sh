@@ -19,8 +19,8 @@ if [[ "$H1" -gt 1 && b -eq 2 ]] || [[ a -eq 3 && b -eq 4 ]]
 
 #!/bin/bash
 # elif statements
-if [ "$mode" == "strict" ]
-then
+#if [ "$mode" == "strict" ]
+#then
 	if [[ "$read_length" -gt "$window_size" ]]
 	then
 		echo "Strict mode"
@@ -94,35 +94,36 @@ then
 		
 		date
 	fi
-elif [  "$mode" == "soft" ]
-then
-	echo "Soft mode"
-	#1/FILTER BAM FOR READS IN THE HOSTPOT
-	echo "------------------------------------------"
-	echo "1/FILTER BAM FOR READS IN THE HOSTPOT"
-	echo "------------------------------------------"
 
-	samtools view $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted.bam ${chr}:${H1}-${H2} > $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}.sam
-	wait
-	
-	echo "Filter reads strictly spanning hotspot done"
-	echo ""
-	echo ""
-	
-	
-	#2/PROCESS THIS FILTERED BAM INTO PYTHON SCRIPT TO COUNT NUMBER OF MUTATIONS
-	echo "------------------------------------------"
-	echo "2/PROCESS THIS FILTERED SAM INTO PYTHON SCRIPT TO COUNT NUMBER OF MUTATIONS"
-	echo "------------------------------------------"
-	
-	cd $WORK_DIR
-	python /users/lfresard/CRISPR-X/scripts/getnumber_mutations_read.py $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}.sam $H1 $H2
-	
-	echo "mutation counts on reads spanning hotspot done"
-	
-	date
-	
-	
-else
-	echo "Please enter sctrict or soft mode"
-fi
+#elif [  "$mode" == "soft" ]
+#then
+#	echo "Soft mode"
+#	#1/FILTER BAM FOR READS IN THE HOSTPOT
+#	echo "------------------------------------------"
+#	echo "1/FILTER BAM FOR READS IN THE HOSTPOT"
+#	echo "------------------------------------------"
+#
+#	samtools view $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted.bam ${chr}:${H1}-${H2} > $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}.sam
+#	wait
+#	
+#	echo "Filter reads strictly spanning hotspot done"
+#	echo ""
+#	echo ""
+#	
+#	
+#	#2/PROCESS THIS FILTERED BAM INTO PYTHON SCRIPT TO COUNT NUMBER OF MUTATIONS
+#	echo "------------------------------------------"
+#	echo "2/PROCESS THIS FILTERED SAM INTO PYTHON SCRIPT TO COUNT NUMBER OF MUTATIONS"
+#	echo "------------------------------------------"
+#	
+#	cd $WORK_DIR
+#	python /users/lfresard/CRISPR-X/scripts/getnumber_mutations_read.py $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}.sam $H1 $H2
+#	
+#	echo "mutation counts on reads spanning hotspot done"
+#	
+#	date
+#	
+#	
+#else
+#	echo "Please enter sctrict or soft mode"
+#fi
