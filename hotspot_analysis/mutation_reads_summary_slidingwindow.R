@@ -24,9 +24,13 @@ par_files=list.files(pattern=paste0('CX',par))
 sample_files=list.files(pattern=paste0('CX',sample))
 
 
-# remove log files from list of files
+# remove log files or result files from list of files
 par_files=par_files[!grepl("log", par_files)]
+par_files=par_files[!grepl("_readstatistics", par_files)]
+
 sample_files=sample_files[!grepl("log", sample_files)]
+sample_files=sample_files[!grepl("_readstatistics", sample_files)]
+
 
 # PROCESS EACH FILE AND GET RESULTS
 
