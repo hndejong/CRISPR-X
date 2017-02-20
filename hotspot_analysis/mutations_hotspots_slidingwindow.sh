@@ -22,7 +22,7 @@ if [ "$mode" == "strict" ]
 then
 	if [ $read_length -gt $window_size]
 		then
-
+			echo "Read length is greater than window size"
 			echo "Strict mode"
 			#1/FILTER BAM FOR READS IN THE HOSTPOT
 			echo "------------------------------------------"
@@ -44,6 +44,7 @@ then
 			date
 
 		else
+			echo "Read length is smaller than window size"
 			echo "Strict mode"
 			#1/FILTER BAM FOR READS IN THE HOSTPOT
 			echo "------------------------------------------"
