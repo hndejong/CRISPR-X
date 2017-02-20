@@ -20,7 +20,7 @@ date
 # elif statements
 if [ "$mode" == "strict" ]
 then
-	if [ $read_length -gt $window_size]
+	if [[ $read_length -gt $window_size]] 
 		then
 			echo "Read length is greater than window size"
 			echo "Strict mode"
