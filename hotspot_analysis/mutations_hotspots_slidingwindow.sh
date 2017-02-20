@@ -15,7 +15,6 @@ window_size=$((H2-H1))
 
 date
 
-
 #!/bin/bash
 # elif statements
 if [ "$mode" == "strict" ]
