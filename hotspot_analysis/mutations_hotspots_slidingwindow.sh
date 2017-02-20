@@ -30,7 +30,7 @@ then
 		echo "------------------------------------------"
 		samtools view $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted.bam ${chr}:${H1}-${H2} > $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}.sam
 		wait
-		cat $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}.sam | awk -v h1="$H1" -v h2="$H2" -v rl="$read_length" ' {if( h1<=$4 && h2<=($4+rl)) print }'> $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}_strictoverlap.sam
+		cat $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}.sam | awk -v h1="$H1" -v h2="$H2" -v rl="$read_length" ' {if( h1>=$4 && h2<=($4+rl)) print }'> $BAM_DIR/CX${n}_n${mismatch}_mapq30_sorted_${H1}-${H2}_strictoverlap.sam
 		echo "Filter reads strictly spanning hotspot done"
 		echo ""
 		echo ""
