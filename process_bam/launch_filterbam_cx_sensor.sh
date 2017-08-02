@@ -9,5 +9,5 @@ REF=$3
 
 cd $BAM_DIR
 
-ls *.bam | sed 's/.bam/\t/' | awk '{print $1}' | awk -v BAM_DIR=$BAM_DIR -v OUT_DIR=$OUT_DIR -v REF=$REF 'BEGIN{OFS="\t"}{print $1".bam", OUT_DIR"/"$1"_mapq30.bam", REF}' |
-	parallel --jobs 10 --col-sep "\t" "${filter_script} {1} {2} {3}"
+ls *.bam | sed 's/.bam/\t/' | awk '{print $1}' | awk -v BAM_DIR=$BAM_DIR -v OUT_DIR=$OUT_DIR -v REF=$REF 'BEGIN{OFS="\t"}{print $1".bam", OUT_DIR"/"$1"_mapq30.bam", OUT_DIR"/"$1"_mapq30_sorted", REF}' |
+	parallel --jobs 10 --col-sep "\t" "${filter_script} {1} {2} {3} {4}"
