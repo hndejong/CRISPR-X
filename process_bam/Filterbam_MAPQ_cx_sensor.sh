@@ -6,6 +6,9 @@
 date
 
 BAM_FILE=$1
+
+echo $BAM_FILE
+
 FILTERED_BAM_FILE=$2
 REF=$3
 
