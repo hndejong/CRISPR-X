@@ -24,7 +24,7 @@ echo "converting bam to mpileup file"
 samtools mpileup -d $DEPTH -Q $QUAL -BAf $REF $BAM_FILE >$MPILEUP_FILE
 
 echo "converting mpiluep to count file"
-python $count_SCRIPT $OUT_FILE > $COUNT_FILE
+python $count_SCRIPT $MPILEUP_FILE > $COUNT_FILE
 
 echo "---------"
 
