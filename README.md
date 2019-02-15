@@ -1,6 +1,6 @@
 CRISPR-X BAM files processing
 -----------------------------
-The scripts corresponds to analyses performed in the [CRISPR-X](https://www.nature.com/articles/nmeth.4038) paper.
+The scripts reflects analyses performed in the [CRISPR-X](https://www.nature.com/articles/nmeth.4038) paper.
 
 
 ## 1. BAM FILTER ON MAPQ
