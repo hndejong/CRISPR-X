@@ -1,14 +1,21 @@
-#CRISPR-X BAM files processing.
+CRISPR-X BAM files processing
+-----------------------------
 
 
 
 ## 1. BAM FILTER ON MAPQ
-
+Parameters:
+* BAM_DIR: directory containing BAM files
+* FILTERED_BAM_DIR: output directory containing BAM files
+* REF.fa: reference geneome used in the alignment
+* SAMPLE_START: sample number to start the processing on (works with the current naming of CRISPR-X files, here starting with CX)
+* SAMPLE_STOP: last sample number on which to perform the analyses
+* mismatches: number of mismatches allowed in aligned reads
 
 ```bash launch_filterbam.sh <BAM_DIR> <FILTERED_BAM_DIR> <REF.fa> <SAMPLE_START> <SAMPLE_STOP> <mismatches>```
 
---> IS CALLING Filterbam_MAPQ.sh
----------------------
+IS CALLING Filterbam_MAPQ.sh
+
 
 2/GET ALL VARIATIONS AND COUNTS
 bash launch_mpileupanalysis.sh <REF.fa> <FILTERED_BAM_DIR> <OUT_DIR> <mismatches> <SAMPLE_START> <SAMPLE_STOP> <QUAL>
