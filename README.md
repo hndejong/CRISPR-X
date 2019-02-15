@@ -14,7 +14,7 @@ Parameters:
 
 ```bash launch_filterbam.sh <BAM_DIR> <FILTERED_BAM_DIR> <REF.fa> <SAMPLE_START> <SAMPLE_STOP> <mismatches>```
 
-IS CALLING Filterbam_MAPQ.sh
+This script is using [Filterbam_MAPQ.sh](./process_bam/Filterbam_MAPQ.sh)
 
 
 2/GET ALL VARIATIONS AND COUNTS
