@@ -14,7 +14,9 @@ Parameters:
 
 Script: [launch_filterbam.sh](./process_bam/launch_filterbam.sh)
 
-```bash launch_filterbam.sh <BAM_DIR> <FILTERED_BAM_DIR> <REF.fa> <SAMPLE_START> <SAMPLE_STOP> <mismatches>```
+```
+bash launch_filterbam.sh <BAM_DIR> <FILTERED_BAM_DIR> <REF.fa> <SAMPLE_START> <SAMPLE_STOP> <mismatches>
+```
 
 This script is using [Filterbam_MAPQ.sh](./process_bam/Filterbam_MAPQ.sh)
 
