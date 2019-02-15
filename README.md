@@ -48,7 +48,8 @@ Parameters:
 * `WORK_DIR`: WORKING DIRECTORY
 
 Script: [launch_enrichmentplot.sh](./enrichment/launch_enrichmentplot.sh)
-```bash launch_enrichmentplot.sh <SAMPLE_START> <SAMPLE_STOP> <mismatches> <PARENT_COUNT_FILE> <LOCUS> <WORK_DIR>
+```
+bash launch_enrichmentplot.sh <SAMPLE_START> <SAMPLE_STOP> <mismatches> <PARENT_COUNT_FILE> <LOCUS> <WORK_DIR>
 ```
 
 This script is using [mpileupcounts_plotter_enrichmentonly.R](./enrichment/mpileupcounts_plotter_enrichmentonly.R)
