@@ -20,7 +20,8 @@ This scripts filters bam files on mapping quality for all samples between `SAMPL
 ```
 bash launch_filterbam.sh <BAM_DIR> <FILTERED_BAM_DIR> <REF.fa> <SAMPLE_START> <SAMPLE_STOP> <mismatches>
 ```
-Example command line: `bash launch_filterbam.sh ./BAM ./FILTERED_BAM MYREF.FA 1 20 5`
+Example command line: `bash launch_filterbam.sh ./BAM ./FILTERED_BAM MYREF.FA 1 20 5`.
+
 This will filter on mapping quality > 30 from sample CX1_n5.bam to CX20_n5.bam.
 
 This script is using [Filterbam_MAPQ.sh](./process_bam/Filterbam_MAPQ.sh)
