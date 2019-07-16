@@ -4,19 +4,24 @@ The scripts reflects analyses performed in the [CRISPR-X](https://www.nature.com
 
 
 ## 1. BAM FILTER ON MAPQ
+
+This first step is filtering bam files on mapping quality, keeping only reads with a mapping quality greater than 30.
+
 Parameters:
-* `BAM_DIR`: directory containing BAM files
+* `BAM_DIR`: directory containing BAM files. Naming convention: `CX<sample_number>_n<number_mismatch>.bam` (example: CX10_n5.bam, CX stand for CRISPR-X)
 * `FILTERED_BAM_DIR`: output directory containing filtered BAM files
-* `REF.fa`: reference genome used in the alignment
+* `REF.fa`: reference genome used in the alignment.
 * `SAMPLE_START`: first sample number to start the processing on (works with the current naming of CRISPR-X files, here starting with CX)
 * `SAMPLE_STOP`: last sample number on which to perform the analyses
 * `mismatches`: number of mismatches allowed in aligned reads
 
 Script: [launch_filterbam.sh](./process_bam/launch_filterbam.sh)
-
+This scripts filters bam files on mapping quality for all samples between `SAMPLE_START` and `SAMPLE_STOP`
 ```
 bash launch_filterbam.sh <BAM_DIR> <FILTERED_BAM_DIR> <REF.fa> <SAMPLE_START> <SAMPLE_STOP> <mismatches>
 ```
+Example command line: `bash launch_filterbam.sh ./BAM ./FILTERED_BAM MYREF.FA 1 20 5`
+This will filter on mapping quality > 30 from sample CX1_n5.bam to CX20_n5.bam.
 
 This script is using [Filterbam_MAPQ.sh](./process_bam/Filterbam_MAPQ.sh)
 
