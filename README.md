@@ -28,6 +28,10 @@ This script is using [Filterbam_MAPQ.sh](./process_bam/Filterbam_MAPQ.sh)
 
 
 ## 2. GET ALL VARIATIONS AND COUNTS
+This second steps is processing the filtered bams and counting all the alleles observed in the region of interest.
+It first generates [mpileup files](http://samtools.sourceforge.net/pileup.shtml). Then it uses another [script](./Get_variations/mpileup_count.py) to generate the allele count observed at each position like in this [example](./count_file_example.md).
+
+
 Parameters:
 * `REF.fa`: reference genome used in the alignment
 * `FILTERED_BAM_DIR`: directory containing filtered BAM files
