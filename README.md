@@ -43,7 +43,7 @@ Script: [launch_mpileupanalysis.sh](./Get_variations/launch_mpileupanalysis.sh)
 bash launch_mpileupanalysis.sh <REF.fa> <FILTERED_BAM_DIR> <OUT_DIR> <mismatches> <SAMPLE_START> <SAMPLE_STOP> <QUAL>
 ```
 Example command line: `bash launch_mpileupanalysis.sh MY_REF.fa ./FILTERED_BAM ./COUNTS 5 1 20 30`
-
+This will get allelic counts from teh filtered bam files from sample CX1_n5_mapq30_sorted.bam to CX20_n5_mapq30_sorted.bam. Output will look like CX20_n5_mapq30_sorted_qual30.count
 
 This script is using [mpileup_analysis.sh](./Get_variations/mpileup_analysis.sh) which is calling [samtools mpileup](http://www.htslib.org/doc/samtools-1.2.html) and [mpileup_count.py](./Get_variations/mpileup_count.py)
 
