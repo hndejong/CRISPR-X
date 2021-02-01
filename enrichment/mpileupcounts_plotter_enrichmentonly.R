@@ -67,7 +67,10 @@ plot((comp$ratio)~comp$BP, xlab="Position", xlim = c(min(bp_com),max(bp_com)), y
 abline(h=1, col = "blue")
 dev.off()
 
-
+pdf(paste(mut_name,'_', chr, '_freq.pdf', sep = ''))
+plot((comp$mutated)~comp$BP, xlab = "Position", xlim = c(min(bp_com), max(bp_com)), ylab = "Frequency of alternative alles", ylim = c(0, max(0.1, max(na.omit(comp$
+mutated)))), main = paste(mut_name, " alternative allele frequency", sep = ""), pch = 19, cex = 2, col = "green")
+dev.off()
 
 
 
