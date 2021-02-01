@@ -55,10 +55,16 @@ control=control[control$bp %in% bp_com,]
 #Create summary table with alternative allele frequency
 
 comp=data.frame(BP=mutated$bp,mutated=(1-mutated$X._REF), control=(1-control$X._REF))
+comp$ratio <- round(comp$mutated/comp$control, 4)
 
-
-pdf(paste(substr(mut,0,5),'_', substr(cont,0,5),substr(cont,23,30),'_',chr,'_ratio.pdf', sep=''))
-plot((comp$mutated/comp$control)~comp$BP, xlab="Position", ylab="Frequency of alternative alleles: Mutated/Control", main=paste(substr(mut,0,5), " vs ", substr(cont,0,5), sep=''), pch =20,cex=.5)
+mut_path <- strsplit(mut, "/")[[1]]
+mut_name <- mut_path[length(mut_path)]
+cont_path <- strsplit(cont, "/")[[1]]
+cont_name <- cont_path[length(cont_path)]
+pdf(paste(substr(mut_name,0,6),'_', substr(cont_name,0,6),'_',substr(cont_name,22,27),'_',chr,'_ratio.pdf', sep=''))
+plot((comp$ratio)~comp$BP, xlab="Position", xlim = c(min(bp_com),max(bp_com)), ylab="Frequency of alternative alleles: Mutated/Control", ylim = c(0,max(c(20,max(na
+.omit(comp$ratio))))), main=paste(substr(mut_name,0,6), " vs ", substr(cont_name,0,6), sep=''), pch =19, cex=2,col="coral3")
+abline(h=1, col = "blue")
 dev.off()
 
 
