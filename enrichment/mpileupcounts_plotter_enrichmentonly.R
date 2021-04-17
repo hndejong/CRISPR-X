@@ -1,10 +1,4 @@
-library(RColorBrewer)
-library(ggplot2)
-library(reshape2)
-library(grid)
-library(gridExtra)
-
-
+pacman::p_load(RColorBrewer, ggplot2, reshape2, grid, gridExtra, IDPmisc)
 
 ###Handle arguments
 args <- commandArgs(trailingOnly=T) 
