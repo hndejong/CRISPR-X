@@ -1,0 +1,52 @@
+
+CRISPR-X wrapper script written by Hannah De Jong for Ashley lab use 
+using code originally from Laure Fresard.
+
+Assumes input of paired-end fastq sequencing files. Assumes run on the Stanford server Sherlock, which uses slurm. 
+
+************** Required data formatting ***********
+
+1. Create your data folder.
+2. Within your data folder, create a folder called "seqs"
+3. Inside your "seqs" folder, make two folders named "fastq" and "ref". 
+4. In the "fastq" folder, place the fastq files from your sequencing run.
+5. In the "ref" folder, place the fasta file of the gene or genome you want to align to. 
+
+Fastq files must be (re)named sequentially as follows:
+
+1_S1_L001_R1_001.fastq.gz
+1_S1_L001_R2_001.fastq.gz
+
+2_S2_L001_R1_001.fastq.gz
+2_S2_L001_R2_001.fastq.gz
+
+3_S3_L001_R1_001.fastq.gz
+3_S3_L001_R2_001.fastq.gz
+
+...etc.
+
+
+*************** Analysis *************
+
+Run the following command:
+
+./CX_analysis.bash DATA REF_NAME CHROM_NAME CODE FIRST_SAMPLE LAST_SAMPLE CTRL_SAMPLE
+
+Provide complete file paths for only the "DATA" and "CODE" arguments. 
+
+Parameters descriptions are as follows: 
+
+DATA # Path to data
+REF_NAME # Name of reference sequence fasta file
+CHROM_NAME # Name of chromosome for alignment within reference sequence
+CODE # Path to code
+FIRST_SAMPLE # File number of first sample
+LAST_SAMPLE # File number of last sample
+CTRL_SAMPLE # File number of control sample
+
+
+*********** Output **************
+
+The folder "counts" will include summaries of mismatch counts for each sample.
+
+The folder "enrichment" will contain pdf plots of enrichment for variants in each sample vs. the control sample. 
