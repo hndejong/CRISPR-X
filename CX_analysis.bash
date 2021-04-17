@@ -8,7 +8,7 @@
 # Example call:
 # CX_analysis.bash data_path ref_file chrom_name code_path number_of_samples ctrl_sample_number
 
-# Requires specific data input naming and path configuration; see "Conventions.txt"
+# Requires specific data input naming and path configuration; see "CX_analysis_conventions.txt"
 
 # Store filepaths
 DATA=$1 # Path to data
